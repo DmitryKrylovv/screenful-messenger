@@ -8,14 +8,29 @@ export interface Contact {
   online: boolean;
 }
 
+export type MessageType = "text" | "voice" | "image" | "file" | "link" | "location";
+
 export interface Message {
   id: string;
   text: string;
   time: string;
   incoming: boolean;
   sender?: string;
-  type?: "text" | "voice";
+  type?: MessageType;
   voiceDuration?: number;
+  voiceTranscript?: string;
+  imageUrl?: string;
+  fileName?: string;
+  fileSize?: string;
+  fileExt?: string;
+  linkUrl?: string;
+  linkTitle?: string;
+  linkDescription?: string;
+  linkDomain?: string;
+  locationName?: string;
+  locationAddress?: string;
+  locationLat?: number;
+  locationLng?: number;
 }
 
 export const contacts: Contact[] = [
@@ -32,14 +47,76 @@ export const contacts: Contact[] = [
 export const messages: Message[] = [
   { id: "1", text: "Hey, I've finished the monochrome token set for the design system.", time: "13:42", incoming: true, sender: "DS" },
   { id: "2", text: "Great. Did you include the surface hierarchy tokens?", time: "13:44", incoming: false },
-  { id: "3", text: "Yes — surface-low, surface-mid, and the border-fine opacity token. All mapped to HSL.", time: "13:45", incoming: true, sender: "DS" },
-  { id: "4", text: "The grid system is ready for review. 4-column layout with fixed widths on nav and context panels.", time: "13:48", incoming: true, sender: "DS" },
-  { id: "5", text: "Perfect. I'll review the spacing scale next. Are we using 4px base?", time: "13:50", incoming: false },
-  { id: "6", text: "Yes, strict 4px grid. Body text is 13px/1.5 with -0.01em tracking.", time: "13:52", incoming: true, sender: "DS" },
-  { id: "7", text: "Clean. Let me check the contrast ratios on the muted foreground.", time: "13:55", incoming: false },
-  { id: "8", text: "", time: "13:56", incoming: true, sender: "DS", type: "voice", voiceDuration: 12 },
-  { id: "9", text: "Already verified — 4.6:1 on white, passes AA. The inverted active state is 21:1.", time: "13:57", incoming: true, sender: "DS" },
-  { id: "10", text: "Ship it.", time: "14:02", incoming: false },
+  {
+    id: "3",
+    text: "",
+    time: "13:45",
+    incoming: true,
+    sender: "DS",
+    type: "image",
+    imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=300&fit=crop",
+  },
+  {
+    id: "4",
+    text: "",
+    time: "13:46",
+    incoming: true,
+    sender: "DS",
+    type: "file",
+    fileName: "token-mapping.json",
+    fileSize: "24 KB",
+    fileExt: "json",
+  },
+  { id: "5", text: "Yes — surface-low, surface-mid, and the border-fine opacity token. All mapped to HSL.", time: "13:47", incoming: true, sender: "DS" },
+  { id: "6", text: "The grid system is ready for review. 4-column layout with fixed widths on nav and context panels.", time: "13:48", incoming: true, sender: "DS" },
+  { id: "7", text: "Perfect. I'll review the spacing scale next. Are we using 4px base?", time: "13:50", incoming: false },
+  {
+    id: "8",
+    text: "",
+    time: "13:51",
+    incoming: false,
+    type: "link",
+    linkUrl: "https://figma.com/design-system",
+    linkTitle: "Design System — Figma",
+    linkDescription: "Complete monochrome design system with tokens, components, and layout grid.",
+    linkDomain: "figma.com",
+  },
+  { id: "9", text: "Yes, strict 4px grid. Body text is 13px/1.5 with -0.01em tracking.", time: "13:52", incoming: true, sender: "DS" },
+  {
+    id: "10",
+    text: "",
+    time: "13:53",
+    incoming: true,
+    sender: "DS",
+    type: "voice",
+    voiceDuration: 12,
+    voiceTranscript: "I've also updated the contrast ratios. Everything passes AA now, and the inverted active state hits 21:1.",
+  },
+  { id: "11", text: "Clean. Let me check the contrast ratios on the muted foreground.", time: "13:55", incoming: false },
+  {
+    id: "12",
+    text: "",
+    time: "13:56",
+    incoming: true,
+    sender: "DS",
+    type: "file",
+    fileName: "contrast-audit.pdf",
+    fileSize: "1.2 MB",
+    fileExt: "pdf",
+  },
+  {
+    id: "13",
+    text: "",
+    time: "13:58",
+    incoming: false,
+    type: "location",
+    locationName: "Studio 4B",
+    locationAddress: "Kungsholmen 12, Stockholm",
+    locationLat: 59.3293,
+    locationLng: 18.0686,
+  },
+  { id: "14", text: "Let's meet here to review the final tokens.", time: "13:59", incoming: false },
+  { id: "15", text: "Ship it.", time: "14:02", incoming: false },
 ];
 
 export const sharedMedia = [
