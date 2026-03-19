@@ -154,16 +154,36 @@ const VoiceMessage = ({ message }: { message: Message }) => {
 
 /* ─── Image Message ─── */
 
-const ImageMessage = ({ message }: { message: Message }) => (
-  <div className="rounded-lg overflow-hidden max-w-[280px] -m-1">
-    <img
-      src={message.imageUrl}
-      alt="Shared image"
-      className="w-full h-auto object-cover rounded-lg"
-      loading="lazy"
-    />
-  </div>
-);
+const ImageMessage = ({ message }: { message: Message }) => {
+  const urls = message.imageUrls?.length ? message.imageUrls : message.imageUrl ? [message.imageUrl] : [];
+  const count = urls.length;
+
+  if (count === 1) {
+    return (
+      <div className="rounded-lg overflow-hidden max-w-[280px] -m-1">
+        <img src={urls[0]} alt="Shared image" className="w-full h-auto object-cover rounded-lg" loading="lazy" />
+      </div>
+    );
+  }
+
+  return (
+    <div className={`grid gap-1 -m-1 max-w-[300px] ${count === 2 ? "grid-cols-2" : "grid-cols-2"}`}>
+      {urls.map((url, i) => (
+        <div
+          key={i}
+          className={`overflow-hidden rounded-lg ${count === 3 && i === 0 ? "col-span-2" : ""}`}
+        >
+          <img
+            src={url}
+            alt={`Image ${i + 1}`}
+            className={`w-full object-cover ${count === 3 && i === 0 ? "h-32" : "h-24"}`}
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
 
 /* ─── File Message ─── */
 
