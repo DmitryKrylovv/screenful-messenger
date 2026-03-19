@@ -14,6 +14,8 @@ export interface Message {
   time: string;
   incoming: boolean;
   sender?: string;
+  type?: "text" | "voice";
+  voiceDuration?: number;
 }
 
 export const contacts: Contact[] = [
