@@ -37,8 +37,9 @@ export const messages: Message[] = [
   { id: "5", text: "Perfect. I'll review the spacing scale next. Are we using 4px base?", time: "13:50", incoming: false },
   { id: "6", text: "Yes, strict 4px grid. Body text is 13px/1.5 with -0.01em tracking.", time: "13:52", incoming: true, sender: "DS" },
   { id: "7", text: "Clean. Let me check the contrast ratios on the muted foreground.", time: "13:55", incoming: false },
-  { id: "8", text: "Already verified — 4.6:1 on white, passes AA. The inverted active state is 21:1.", time: "13:57", incoming: true, sender: "DS" },
-  { id: "9", text: "Ship it.", time: "14:02", incoming: false },
+  { id: "8", text: "", time: "13:56", incoming: true, sender: "DS", type: "voice", voiceDuration: 12 },
+  { id: "9", text: "Already verified — 4.6:1 on white, passes AA. The inverted active state is 21:1.", time: "13:57", incoming: true, sender: "DS" },
+  { id: "10", text: "Ship it.", time: "14:02", incoming: false },
 ];
 
 export const sharedMedia = [
