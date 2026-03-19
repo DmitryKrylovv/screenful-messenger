@@ -20,6 +20,7 @@ export interface Message {
   voiceDuration?: number;
   voiceTranscript?: string;
   imageUrl?: string;
+  imageUrls?: string[];
   fileName?: string;
   fileSize?: string;
   fileExt?: string;
@@ -54,7 +55,11 @@ export const messages: Message[] = [
     incoming: true,
     sender: "DS",
     type: "image",
-    imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=300&fit=crop",
+    imageUrls: [
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=400&h=300&fit=crop",
+    ],
   },
   {
     id: "4",
