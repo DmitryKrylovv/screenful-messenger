@@ -20,6 +20,7 @@ export interface Message {
   voiceDuration?: number;
   voiceTranscript?: string;
   imageUrl?: string;
+  imageUrls?: string[];
   fileName?: string;
   fileSize?: string;
   fileExt?: string;
