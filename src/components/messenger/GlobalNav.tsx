@@ -1,6 +1,6 @@
 import { Settings, User, MessageSquare, Archive, Cloud, Music, Bot } from "lucide-react";
 
-export type AppView = "messenger" | "cloud" | "music";
+export type AppView = "messenger" | "agents" | "cloud" | "music";
 
 interface GlobalNavProps {
   activeView: AppView;
