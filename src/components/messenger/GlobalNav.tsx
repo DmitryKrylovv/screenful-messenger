@@ -1,6 +1,13 @@
-import { Settings, User, MessageSquare, Archive } from "lucide-react";
+import { Settings, User, MessageSquare, Archive, Cloud, Music } from "lucide-react";
 
-const GlobalNav = () => {
+export type AppView = "messenger" | "cloud" | "music";
+
+interface GlobalNavProps {
+  activeView: AppView;
+  onViewChange: (view: AppView) => void;
+}
+
+const GlobalNav = ({ activeView, onViewChange }: GlobalNavProps) => {
   return (
     <nav className="w-16 flex flex-col items-center py-4 border-r border-foreground/5 bg-surface-low shrink-0">
       <div className="w-10 h-10 bg-primary rounded-xl mb-8 flex items-center justify-center">
@@ -8,7 +15,9 @@ const GlobalNav = () => {
       </div>
 
       <div className="flex flex-col items-center gap-1 mb-auto">
-        <NavIcon icon={MessageSquare} active />
+        <NavIcon icon={MessageSquare} active={activeView === "messenger"} onClick={() => onViewChange("messenger")} />
+        <NavIcon icon={Cloud} active={activeView === "cloud"} onClick={() => onViewChange("cloud")} />
+        <NavIcon icon={Music} active={activeView === "music"} onClick={() => onViewChange("music")} />
         <NavIcon icon={Archive} />
       </div>
 
@@ -20,8 +29,9 @@ const GlobalNav = () => {
   );
 };
 
-const NavIcon = ({ icon: Icon, active = false }: { icon: React.ElementType; active?: boolean }) => (
+const NavIcon = ({ icon: Icon, active = false, onClick }: { icon: React.ElementType; active?: boolean; onClick?: () => void }) => (
   <button
+    onClick={onClick}
     className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-150 ${
       active ? "bg-primary text-primary-foreground" : "text-foreground/40 hover:text-foreground hover:bg-surface-mid"
     }`}
