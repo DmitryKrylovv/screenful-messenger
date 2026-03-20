@@ -16,6 +16,7 @@ const GlobalNav = ({ activeView, onViewChange }: GlobalNavProps) => {
 
       <div className="flex flex-col items-center gap-1 mb-auto">
         <NavIcon icon={MessageSquare} active={activeView === "messenger"} onClick={() => onViewChange("messenger")} />
+        <NavIcon icon={Bot} active={activeView === "agents"} onClick={() => onViewChange("agents")} />
         <NavIcon icon={Cloud} active={activeView === "cloud"} onClick={() => onViewChange("cloud")} />
         <NavIcon icon={Music} active={activeView === "music"} onClick={() => onViewChange("music")} />
         <NavIcon icon={Archive} />
