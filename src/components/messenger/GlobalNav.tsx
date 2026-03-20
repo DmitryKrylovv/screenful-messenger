@@ -1,4 +1,4 @@
-import { Settings, User, MessageSquare, Archive, Cloud, Music } from "lucide-react";
+import { Settings, User, MessageSquare, Archive, Cloud, Music, Bot } from "lucide-react";
 
 export type AppView = "messenger" | "cloud" | "music";
 
