@@ -11,7 +11,7 @@ const GlobalNav = ({ activeView, onViewChange }: GlobalNavProps) => {
   return (
     <nav className="w-16 flex flex-col items-center py-4 border-r border-foreground/5 bg-surface-low shrink-0">
       <div className="w-10 h-10 bg-primary rounded-xl mb-8 flex items-center justify-center">
-        <span className="text-primary-foreground font-bold text-sm">M</span>
+        <span className="text-primary-foreground font-bold text-sm">R</span>
       </div>
 
       <div className="flex flex-col items-center gap-1 mb-auto">
