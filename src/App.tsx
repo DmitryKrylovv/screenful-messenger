@@ -24,6 +24,8 @@ const App = () => (
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/login" element={<Login />} />
           <Route path="/messenger" element={<Index />} />
+          <Route path="/c/:slug" element={<ChannelPage />} />
+          <Route path="/u/:username" element={<ProfilePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
