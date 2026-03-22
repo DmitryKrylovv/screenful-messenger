@@ -7,6 +7,8 @@ import Landing from "./pages/Landing.tsx";
 import Onboarding from "./pages/Onboarding.tsx";
 import Login from "./pages/Login.tsx";
 import Index from "./pages/Index.tsx";
+import ChannelPage from "./pages/ChannelPage.tsx";
+import ProfilePage from "./pages/ProfilePage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
