@@ -73,7 +73,7 @@ const Landing = () => {
             <a href="#security" className="transition-colors hover:text-foreground">Безопасность</a>
           </nav>
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/onboarding")}
             className="h-9 rounded-lg bg-foreground px-4 text-sm font-medium text-background transition-all hover:opacity-90 active:scale-[0.97]"
           >
             Открыть приложение
@@ -102,7 +102,7 @@ const Landing = () => {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/onboarding")}
               className="group flex h-12 items-center gap-2 rounded-lg bg-foreground px-6 text-sm font-medium text-background transition-all hover:opacity-90 active:scale-[0.97]"
             >
               Начать бесплатно
@@ -231,7 +231,7 @@ const Landing = () => {
             Бесплатно. Без рекламы. Без ограничений.
           </p>
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/onboarding")}
             className="group flex h-12 items-center gap-2 rounded-lg bg-background px-8 text-sm font-medium text-foreground transition-all hover:opacity-90 active:scale-[0.97]"
           >
             Создать аккаунт
