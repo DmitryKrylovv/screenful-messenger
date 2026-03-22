@@ -82,49 +82,51 @@ const Landing = () => {
       </header>
 
       {/* Hero */}
-      <section className="flex min-h-screen flex-col items-center justify-center px-6 pt-14">
+      <section className="relative flex min-h-[100vh] flex-col items-center justify-center px-6 pb-24 pt-14">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-foreground">
-            <Send className="h-7 w-7 text-background" strokeWidth={1.5} />
+          <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-3xl bg-foreground">
+            <Send className="h-9 w-9 text-background" strokeWidth={1.5} />
           </div>
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border px-3.5 py-1.5 text-xs text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-foreground animate-pulse" />
             Версия 2.0 — уже доступна
           </div>
-          <h1 className="mb-4 text-5xl font-bold tracking-tight md:text-7xl">
+          <h1 className="mb-6 text-6xl font-bold tracking-tight md:text-8xl leading-[0.95]">
             Общение
             <br />
             без лишнего
           </h1>
-          <p className="mb-10 max-w-lg text-lg text-muted-foreground leading-relaxed">
+          <p className="mb-12 max-w-lg text-lg text-muted-foreground leading-relaxed md:text-xl">
             Relay — мессенджер нового поколения. Минималистичный, быстрый,
             безопасный. С AI-агентами, облаком и музыкой внутри.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={() => navigate("/onboarding")}
-              className="group flex h-12 items-center gap-2 rounded-lg bg-foreground px-6 text-sm font-medium text-background transition-all hover:opacity-90 active:scale-[0.97]"
+              className="group flex h-13 items-center gap-2 rounded-xl bg-foreground px-8 text-sm font-medium text-background transition-all hover:opacity-90 active:scale-[0.97]"
             >
               Начать бесплатно
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </button>
             <a
               href="#platforms"
-              className="flex h-12 items-center gap-2 rounded-lg border border-border px-6 text-sm font-medium text-foreground transition-all hover:bg-surface-low active:scale-[0.97]"
+              className="flex h-13 items-center gap-2 rounded-xl border border-border px-8 text-sm font-medium text-foreground transition-all hover:bg-surface-low active:scale-[0.97]"
             >
               Скачать
             </a>
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-px rounded-xl border border-border bg-border md:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center gap-1 bg-background px-6 py-6 first:rounded-l-xl last:rounded-r-xl">
-              <span className="text-2xl font-bold tracking-tight">{s.value}</span>
-              <span className="text-xs text-muted-foreground">{s.label}</span>
-            </div>
-          ))}
+        {/* Stats — pinned to bottom of hero */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full max-w-2xl px-6">
+          <div className="grid grid-cols-2 gap-px rounded-xl border border-border bg-border md:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col items-center gap-1 bg-background px-6 py-5 first:rounded-l-xl last:rounded-r-xl">
+                <span className="text-2xl font-bold tracking-tight">{s.value}</span>
+                <span className="text-xs text-muted-foreground">{s.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
