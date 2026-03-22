@@ -4,7 +4,7 @@ import { MessageCircle, Shield, Zap, ArrowRight } from "lucide-react";
 
 const slides = [
   {
-    title: "Monolith",
+    title: "Relay",
     subtitle: "Общение без лишнего",
     description: "Минималистичный мессенджер, который не отвлекает от главного — ваших разговоров.",
     icon: MessageCircle,

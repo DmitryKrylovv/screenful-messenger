@@ -21,7 +21,7 @@ const Login = () => {
             <MessageCircle className="h-5 w-5 text-foreground" strokeWidth={1.5} />
           </div>
           <span className="text-lg font-semibold tracking-tight text-foreground">
-            Monolith
+            Relay
           </span>
         </div>
 
