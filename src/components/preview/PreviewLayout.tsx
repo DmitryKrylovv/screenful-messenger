@@ -43,7 +43,7 @@ const PreviewLayout = ({ kind, title, subtitle, avatar, meta, description, extra
             {kind} в Relay
           </div>
           <div className="mb-5">{avatar}</div>
-          <h1 className="text-3xl font-semibold tracking-tight mb-2">{title}</h1>
+          <h1 className="text-4xl font-bold tracking-tight mb-2">{title}</h1>
           <p className="text-sm text-muted-foreground mb-8">{subtitle}</p>
 
           <Button
