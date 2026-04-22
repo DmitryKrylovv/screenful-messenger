@@ -32,10 +32,10 @@ const products = [
 ];
 
 const codeSnippet = `# Установка Relay Node
-curl -fsSL https://get.relay.app | sh
+curl -fsSL https://get.relaymessenger.ru | sh
 
 # Регистрация в сети Relay
-relay node init --hub=hub.relay.app
+relay node init --hub=hub.relaymessenger.ru
 relay node start
 
 # Готово. Нода в сети.
@@ -262,7 +262,7 @@ const RelayDevelopers = () => {
       <footer className="border-t border-border py-10">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 text-xs text-muted-foreground">
           <span>© 2025 Relay. Open network for direct communication.</span>
-          <Link to="/" className="hover:text-foreground">relay.app</Link>
+          <Link to="/" className="hover:text-foreground">relaymessenger.ru</Link>
         </div>
       </footer>
     </div>

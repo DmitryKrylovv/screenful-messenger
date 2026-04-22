@@ -14,7 +14,7 @@ const GroupPreview = () => {
     <PreviewLayout
       kind="Группа"
       title={title}
-      subtitle={`relay.app/g/${slug}`}
+      subtitle={`relaymessenger.ru/g/${slug}`}
       avatar={
         <div className="w-24 h-24 rounded-3xl bg-primary text-primary-foreground flex items-center justify-center">
           <Users className="w-10 h-10" strokeWidth={1.6} />

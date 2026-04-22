@@ -14,7 +14,7 @@ const ChannelPreview = () => {
     <PreviewLayout
       kind="Канал"
       title={title}
-      subtitle={`relay.app/c/${slug}`}
+      subtitle={`relaymessenger.ru/c/${slug}`}
       avatar={
         <div className="relative">
           <div className="w-24 h-24 rounded-3xl bg-primary text-primary-foreground flex items-center justify-center">
