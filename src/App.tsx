@@ -10,6 +10,7 @@ import Index from "./pages/Index.tsx";
 import GroupPreview from "./pages/GroupPreview.tsx";
 import ChannelPreview from "./pages/ChannelPreview.tsx";
 import UserPreview from "./pages/UserPreview.tsx";
+import RelayDevelopers from "./pages/RelayDevelopers.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/g/:slug" element={<GroupPreview />} />
           <Route path="/c/:slug" element={<ChannelPreview />} />
           <Route path="/u/:username" element={<UserPreview />} />
+          <Route path="/developers" element={<RelayDevelopers />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
