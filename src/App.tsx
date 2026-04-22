@@ -7,6 +7,9 @@ import Landing from "./pages/Landing.tsx";
 import Onboarding from "./pages/Onboarding.tsx";
 import Login from "./pages/Login.tsx";
 import Index from "./pages/Index.tsx";
+import GroupPreview from "./pages/GroupPreview.tsx";
+import ChannelPreview from "./pages/ChannelPreview.tsx";
+import UserPreview from "./pages/UserPreview.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -22,6 +25,9 @@ const App = () => (
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/login" element={<Login />} />
           <Route path="/messenger" element={<Index />} />
+          <Route path="/g/:slug" element={<GroupPreview />} />
+          <Route path="/c/:slug" element={<ChannelPreview />} />
+          <Route path="/u/:username" element={<UserPreview />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
